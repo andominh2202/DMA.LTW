@@ -1,0 +1,23 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v10.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v10.0": {
+      "DmaLession01/1.0.0": {
+        "runtime": {
+          "DmaLession01.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "DmaLession01/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

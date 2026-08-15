@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("DmaLession01")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+620b894ad897755d7b43be5ed948f702993fdc81")]
 [assembly: System.Reflection.AssemblyProductAttribute("DmaLession01")]
 [assembly: System.Reflection.AssemblyTitleAttribute("DmaLession01")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

@@ -1,0 +1,15 @@
+D:\DMA.LTW\DmaLession01\DmaLession01\bin\Debug\net10.0\DmaLession01.exe
+D:\DMA.LTW\DmaLession01\DmaLession01\bin\Debug\net10.0\DmaLession01.deps.json
+D:\DMA.LTW\DmaLession01\DmaLession01\bin\Debug\net10.0\DmaLession01.runtimeconfig.json
+D:\DMA.LTW\DmaLession01\DmaLession01\bin\Debug\net10.0\DmaLession01.dll
+D:\DMA.LTW\DmaLession01\DmaLession01\bin\Debug\net10.0\DmaLession01.pdb
+D:\DMA.LTW\DmaLession01\DmaLession01\obj\Debug\net10.0\DmaLession01.GeneratedMSBuildEditorConfig.editorconfig
+D:\DMA.LTW\DmaLession01\DmaLession01\obj\Debug\net10.0\DmaLession01.AssemblyInfoInputs.cache
+D:\DMA.LTW\DmaLession01\DmaLession01\obj\Debug\net10.0\DmaLession01.AssemblyInfo.cs
+D:\DMA.LTW\DmaLession01\DmaLession01\obj\Debug\net10.0\DmaLession01.csproj.CoreCompileInputs.cache
+D:\DMA.LTW\DmaLession01\DmaLession01\obj\Debug\net10.0\DmaLession01.sourcelink.json
+D:\DMA.LTW\DmaLession01\DmaLession01\obj\Debug\net10.0\DmaLession01.dll
+D:\DMA.LTW\DmaLession01\DmaLession01\obj\Debug\net10.0\refint\DmaLession01.dll
+D:\DMA.LTW\DmaLession01\DmaLession01\obj\Debug\net10.0\DmaLession01.pdb
+D:\DMA.LTW\DmaLession01\DmaLession01\obj\Debug\net10.0\DmaLession01.genruntimeconfig.cache
+D:\DMA.LTW\DmaLession01\DmaLession01\obj\Debug\net10.0\ref\DmaLession01.dll

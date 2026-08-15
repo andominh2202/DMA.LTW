@@ -3,8 +3,24 @@
   "WorkspaceRootPath": "D:\\DMA.LTW\\DmaLession01\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{9AAE3F9D-78DB-4FBE-8CAC-2F684C7167B1}|DmaLession01\\DmaLession01.csproj|d:\\dma.ltw\\dmalession01\\dmalession01\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{9AAE3F9D-78DB-4FBE-8CAC-2F684C7167B1}|DmaLession01\\DmaLession01.csproj|solutionrelative:dmalession01\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{188B3EFB-4FD5-CC90-2DB8-CFC628E10486}|DmaLession01\\DmaLession01.csproj|d:\\dma.ltw\\dmalession01\\dmalession01\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{188B3EFB-4FD5-CC90-2DB8-CFC628E10486}|DmaLession01\\DmaLession01.csproj|solutionrelative:dmalession01\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{188B3EFB-4FD5-CC90-2DB8-CFC628E10486}|DmaLession01\\DmaLession01.csproj|d:\\dma.ltw\\dmalession01\\dmalession01\\menumanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{188B3EFB-4FD5-CC90-2DB8-CFC628E10486}|DmaLession01\\DmaLession01.csproj|solutionrelative:dmalession01\\menumanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{188B3EFB-4FD5-CC90-2DB8-CFC628E10486}|DmaLession01\\DmaLession01.csproj|d:\\dma.ltw\\dmalession01\\dmalession01\\studentconsoleview.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{188B3EFB-4FD5-CC90-2DB8-CFC628E10486}|DmaLession01\\DmaLession01.csproj|solutionrelative:dmalession01\\studentconsoleview.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{188B3EFB-4FD5-CC90-2DB8-CFC628E10486}|DmaLession01\\DmaLession01.csproj|d:\\dma.ltw\\dmalession01\\dmalession01\\studentservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{188B3EFB-4FD5-CC90-2DB8-CFC628E10486}|DmaLession01\\DmaLession01.csproj|solutionrelative:dmalession01\\studentservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{188B3EFB-4FD5-CC90-2DB8-CFC628E10486}|DmaLession01\\DmaLession01.csproj|d:\\dma.ltw\\dmalession01\\dmalession01\\student.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{188B3EFB-4FD5-CC90-2DB8-CFC628E10486}|DmaLession01\\DmaLession01.csproj|solutionrelative:dmalession01\\student.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -14,8 +30,47 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 3,
           "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "MenuManager.cs",
+              "DocumentMoniker": "D:\\DMA.LTW\\DmaLession01\\DmaLession01\\MenuManager.cs",
+              "RelativeDocumentMoniker": "DmaLession01\\MenuManager.cs",
+              "ToolTip": "D:\\DMA.LTW\\DmaLession01\\DmaLession01\\MenuManager.cs",
+              "RelativeToolTip": "DmaLession01\\MenuManager.cs",
+              "ViewState": "AgIAABUBAAAAAAAAAAAQwDgBAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-08-15T10:35:10.54Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "StudentConsoleView.cs",
+              "DocumentMoniker": "D:\\DMA.LTW\\DmaLession01\\DmaLession01\\StudentConsoleView.cs",
+              "RelativeDocumentMoniker": "DmaLession01\\StudentConsoleView.cs",
+              "ToolTip": "D:\\DMA.LTW\\DmaLession01\\DmaLession01\\StudentConsoleView.cs",
+              "RelativeToolTip": "DmaLession01\\StudentConsoleView.cs",
+              "ViewState": "AgIAAJMAAAAAAAAAAAAQwLYAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-08-15T10:34:53.705Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "StudentService.cs",
+              "DocumentMoniker": "D:\\DMA.LTW\\DmaLession01\\DmaLession01\\StudentService.cs",
+              "RelativeDocumentMoniker": "DmaLession01\\StudentService.cs",
+              "ToolTip": "D:\\DMA.LTW\\DmaLession01\\DmaLession01\\StudentService.cs",
+              "RelativeToolTip": "DmaLession01\\StudentService.cs",
+              "ViewState": "AgIAAGcAAAAAAAAAAAAQwIoAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-08-15T10:34:17.617Z",
+              "EditorCaption": ""
+            },
             {
               "$type": "Document",
               "DocumentIndex": 0,
@@ -24,9 +79,22 @@
               "RelativeDocumentMoniker": "DmaLession01\\Program.cs",
               "ToolTip": "D:\\DMA.LTW\\DmaLession01\\DmaLession01\\Program.cs",
               "RelativeToolTip": "DmaLession01\\Program.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-08-14T15:40:37.046Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Student.cs",
+              "DocumentMoniker": "D:\\DMA.LTW\\DmaLession01\\DmaLession01\\Student.cs",
+              "RelativeDocumentMoniker": "DmaLession01\\Student.cs",
+              "ToolTip": "D:\\DMA.LTW\\DmaLession01\\DmaLession01\\Student.cs",
+              "RelativeToolTip": "DmaLession01\\Student.cs",
+              "ViewState": "AgIAAC4AAAAAAAAAAAAQwFEAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-08-14T15:50:40.773Z",
               "EditorCaption": ""
             }
           ]
