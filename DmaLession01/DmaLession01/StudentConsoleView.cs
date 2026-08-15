@@ -5,7 +5,10 @@ namespace DmaLession01
 {
     internal static class StudentConsoleView
     {
-        public static void DisplayStudents(List<Student> students, string title = "Danh sách sinh viên")
+        // === PHƯƠNG THỨC HIỂN THỊ ===
+
+        // Hiển thị danh sách sinh viên (List)
+        public static void hienThiDanhSach(List<Student> students, string title = "Danh sách sinh viên")
         {
             Console.Clear();
             Console.WriteLine($"=== {title} ===");
@@ -30,7 +33,8 @@ namespace DmaLession01
             Console.WriteLine();
         }
 
-        public static void DisplayStudent(Student? student)
+        // Hiển thị thông tin 1 sinh viên
+        public static void hienThiSinhVien(Student? student)
         {
             if (student == null)
             {
@@ -39,10 +43,10 @@ namespace DmaLession01
             }
 
             Console.WriteLine("=== Thông tin sinh viên ===");
-            Console.WriteLine($"MSSV: {student.masv}");
+            Console.WriteLine($"MSSV: {student.maSV}");
             Console.WriteLine($"Họ tên: {student.hoTen}");
             Console.WriteLine($"Ngày sinh: {student.ngaySinh:dd/MM/yyyy}");
-            Console.WriteLine($"Giới tính: {student.GetGioiTinhText()}");
+            Console.WriteLine($"Giới tính: {student.layTenGioiTinh()}");
             Console.WriteLine($"Email: {student.email}");
             Console.WriteLine($"SĐT: {student.soDienThoai}");
             Console.WriteLine($"Ngành: {student.nganhHoc}");
@@ -51,7 +55,8 @@ namespace DmaLession01
             Console.WriteLine();
         }
 
-        public static void DisplayStatistics(Dictionary<string, int> statistics, string title)
+        // Hiển thị thống kê
+        public static void hienThiThongKe(Dictionary<string, int> statistics, string title)
         {
             Console.WriteLine($"=== {title} ===");
             Console.WriteLine();
@@ -71,7 +76,8 @@ namespace DmaLession01
             Console.WriteLine();
         }
 
-        public static void DisplayMessage(string message, bool isSuccess = true)
+        // Hiển thị thông báo
+        public static void hienThiThongBao(string message, bool isSuccess = true)
         {
             if (isSuccess)
             {
@@ -87,13 +93,15 @@ namespace DmaLession01
             Console.WriteLine();
         }
 
-        public static string GetInput(string prompt)
+        // === PHƯƠNG THỨC NHẬP LIỆU ===
+
+        public static string nhapChuoi(string prompt)
         {
             Console.Write($"{prompt}: ");
             return Console.ReadLine() ?? string.Empty;
         }
 
-        public static DateTime GetDateInput(string prompt)
+        public static DateTime nhapNgay(string prompt)
         {
             while (true)
             {
@@ -110,7 +118,7 @@ namespace DmaLession01
             }
         }
 
-        public static float GetFloatInput(string prompt)
+        public static float nhapSoThuc(string prompt)
         {
             while (true)
             {
@@ -126,7 +134,7 @@ namespace DmaLession01
             }
         }
 
-        public static bool GetGenderInput(string prompt)
+        public static bool nhapGioiTinh(string prompt)
         {
             while (true)
             {
@@ -142,7 +150,7 @@ namespace DmaLession01
             }
         }
 
-        public static string GetStatusInput(string prompt)
+        public static string nhapTrangThai(string prompt)
         {
             while (true)
             {
@@ -156,25 +164,25 @@ namespace DmaLession01
             }
         }
 
-        public static Student GetStudentInput()
+        public static Student nhapSinhVien()
         {
             Console.WriteLine("=== NHẬP THÔNG TIN SINH VIÊN ===");
 
-            string masv = GetInput("Mã sinh viên");
-            string hoTen = GetInput("Họ tên");
-            DateTime ngaySinh = GetDateInput("Ngày sinh");
-            bool gioiTinh = GetGenderInput("Giới tính");
-            string email = GetInput("Email");
-            string soDienThoai = GetInput("Số điện thoại");
-            string nganhHoc = GetInput("Ngành học");
-            float diemTrungBinh = GetFloatInput("Điểm trung bình");
-            string trangThai = GetStatusInput("Trạng thái học tập");
+            string maSV = nhapChuoi("Mã sinh viên");
+            string hoTen = nhapChuoi("Họ tên");
+            DateTime ngaySinh = nhapNgay("Ngày sinh");
+            bool gioiTinh = nhapGioiTinh("Giới tính");
+            string email = nhapChuoi("Email");
+            string soDienThoai = nhapChuoi("Số điện thoại");
+            string nganhHoc = nhapChuoi("Ngành học");
+            float diemTrungBinh = nhapSoThuc("Điểm trung bình");
+            string trangThai = nhapTrangThai("Trạng thái học tập");
 
-            return new Student(masv, hoTen, ngaySinh, gioiTinh, email,
+            return new Student(maSV, hoTen, ngaySinh, gioiTinh, email,
                               soDienThoai, nganhHoc, diemTrungBinh, trangThai);
         }
 
-        public static void WaitForKeyPress()
+        public static void choPhimBatKy()
         {
             Console.WriteLine("Nhấn phím bất kỳ để tiếp tục...");
             Console.ReadKey();

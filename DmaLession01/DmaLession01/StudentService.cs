@@ -14,13 +14,13 @@ namespace DmaLession01
         }
 
         // 1. Thêm sinh viên
-        public bool AddStudent(Student student, out string errorMessage)
+        public bool themSinhVien(Student student, out string errorMessage)
         {
             errorMessage = string.Empty;
 
-            if (_students.Any(s => s.masv == student.masv))
+            if (_students.Any(s => s.maSV == student.maSV))
             {
-                errorMessage = $"Sinh viên với mã {student.masv} đã tồn tại";
+                errorMessage = $"Sinh viên với mã {student.maSV} đã tồn tại";
                 return false;
             }
 
@@ -29,19 +29,19 @@ namespace DmaLession01
         }
 
         // 2. Lấy tất cả sinh viên
-        public List<Student> GetAllStudents()
+        public List<Student> layTatCaSinhVien()
         {
             return _students.ToList();
         }
 
         // 3. Tìm sinh viên theo mã
-        public Student? FindStudentById(string studentId)
+        public Student? timSinhVienTheoMa(string studentId)
         {
-            return _students.FirstOrDefault(s => s.masv == studentId);
+            return _students.FirstOrDefault(s => s.maSV == studentId);
         }
 
         // 4. Tìm gần đúng theo họ tên
-        public List<Student> FindStudentsByName(string searchName)
+        public List<Student> timSinhVienTheoTen(string searchName)
         {
             if (string.IsNullOrWhiteSpace(searchName))
                 return new List<Student>();
@@ -51,11 +51,11 @@ namespace DmaLession01
         }
 
         // 5. Cập nhật sinh viên
-        public bool UpdateStudent(string studentId, Student updatedStudent, out string errorMessage)
+        public bool capNhatSinhVien(string studentId, Student updatedStudent, out string errorMessage)
         {
             errorMessage = string.Empty;
 
-            var existingStudent = FindStudentById(studentId);
+            var existingStudent = timSinhVienTheoMa(studentId);
             if (existingStudent == null)
             {
                 errorMessage = $"Không tìm thấy sinh viên với mã {studentId}";
@@ -75,11 +75,11 @@ namespace DmaLession01
         }
 
         // 6. Xóa sinh viên
-        public bool DeleteStudent(string studentId, out string errorMessage)
+        public bool xoaSinhVien(string studentId, out string errorMessage)
         {
             errorMessage = string.Empty;
 
-            var student = FindStudentById(studentId);
+            var student = timSinhVienTheoMa(studentId);
             if (student == null)
             {
                 errorMessage = $"Không tìm thấy sinh viên với mã {studentId}";
@@ -91,46 +91,46 @@ namespace DmaLession01
         }
 
         // 7. Sắp xếp theo họ tên
-        public List<Student> SortByName()
+        public List<Student> sapXepTheoTen()
         {
             return _students.OrderBy(s => s.hoTen).ToList();
         }
 
         // 8. Sắp xếp theo điểm trung bình (giảm dần)
-        public List<Student> SortByGpa()
+        public List<Student> sapXepTheoDiem()
         {
             return _students.OrderByDescending(s => s.diemTrungBinh).ToList();
         }
 
         // 9. Lấy sinh viên có điểm >= 8
-        public List<Student> GetExcellentStudents()
+        public List<Student> laySinhVienGioi()
         {
             return _students.Where(s => s.diemTrungBinh >= 8.0f).ToList();
         }
 
         // 10. Lấy sinh viên có điểm cao nhất
-        public Student? GetHighestGpaStudent()
+        public Student? laySinhVienCaoNhat()
         {
             if (_students.Count == 0) return null;
             return _students.OrderByDescending(s => s.diemTrungBinh).First();
         }
 
         // 11. Tính điểm trung bình toàn bộ sinh viên
-        public float CalculateAverageGpa()
+        public float tinhDiemTrungBinh()
         {
             if (_students.Count == 0) return 0;
             return _students.Average(s => s.diemTrungBinh);
         }
 
         // 12. Thống kê theo ngành
-        public Dictionary<string, int> GetStatisticsByMajor()
+        public Dictionary<string, int> thongKeTheoNganh()
         {
             return _students.GroupBy(s => s.nganhHoc)
                            .ToDictionary(g => g.Key, g => g.Count());
         }
 
         // 13. Thống kê theo trạng thái
-        public Dictionary<string, int> GetStatisticsByStatus()
+        public Dictionary<string, int> thongKeTheoTrangThai()
         {
             return _students.GroupBy(s => s.trangThaiHocTap)
                            .ToDictionary(g => g.Key, g => g.Count());
