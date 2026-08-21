@@ -40,7 +40,7 @@
               "RelativeDocumentMoniker": "DmaLession01\\Student.cs",
               "ToolTip": "D:\\DMA.LTW\\DmaLession01\\DmaLession01\\Student.cs",
               "RelativeToolTip": "DmaLession01\\Student.cs",
-              "ViewState": "AgIAAE4AAAAAAAAAAAAkwFcAAAA6AAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAFcAAAA6AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-08-14T15:50:40.773Z",
               "IsPinned": true,
@@ -56,8 +56,7 @@
               "RelativeToolTip": "DmaLession01\\MenuManager.cs",
               "ViewState": "AgIAACYBAAAAAAAAAAAAAB0AAAAOAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-08-15T14:58:59.503Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-08-15T14:58:59.503Z"
             },
             {
               "$type": "Document",
@@ -69,8 +68,7 @@
               "RelativeToolTip": "DmaLession01\\StudentConsoleView.cs",
               "ViewState": "AgIAAD4AAAAAAAAAAADwv74AAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-08-15T10:34:53.705Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-08-15T10:34:53.705Z"
             },
             {
               "$type": "Document",
@@ -82,8 +80,7 @@
               "RelativeToolTip": "DmaLession01\\Program.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-08-14T15:40:37.046Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-08-14T15:40:37.046Z"
             },
             {
               "$type": "Document",
@@ -95,8 +92,7 @@
               "RelativeToolTip": "DmaLession01\\StudentService.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAIoAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-08-15T10:34:17.617Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-08-15T10:34:17.617Z"
             }
           ]
         }

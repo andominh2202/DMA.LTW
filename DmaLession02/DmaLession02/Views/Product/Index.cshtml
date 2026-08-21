@@ -1,0 +1,39 @@
+﻿@model IEnumerable<DmaLesson02.Models.Product>
+
+@{
+    ViewData["Title"] = "Danh sách sản phẩm";
+}
+
+<div class="container mt-4">
+    <h2>Danh sách sản phẩm</h2>
+
+    <table class="table table-bordered table-striped align-middle mt-3">
+        <thead class="table-dark">
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Price</th>
+                <th>Created At</th>
+                <th>Image</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@item.Id</td>
+                    <td>@item.Name</td>
+                    <td>@item.Price.ToString("N0") đ</td>
+                    <td>@item.CreatedAt.ToString("dd/MM/yyyy")</td>
+                    <td>
+                        <img src="~/images/@item.Image" alt="@item.Name" style="width: 70px; height: 70px; object-fit: cover;" class="rounded" />
+                    </td>
+                    <td>
+                        <a href="#" class="btn btn-info btn-sm">View</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
