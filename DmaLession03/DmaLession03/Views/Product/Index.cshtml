@@ -1,0 +1,104 @@
+@{
+    ViewData["Title"] = "Sản phẩm";
+
+    var products =
+        ViewBag.Products as List<DmaLession03.Models.Product>;
+
+    var categories =
+        ViewBag.Categories as List<DmaLession03.Models.Category>;
+}
+
+<div class="container mt-4">
+
+    <div class="row">
+
+        <div class="col-md-3">
+
+            <h4>DANH MỤC</h4>
+
+            <div class="list-group">
+
+                <a href="/san-pham"
+                   class="list-group-item list-group-item-action">
+                    Tất cả
+                </a>
+
+                @foreach (var category in categories!)
+                {
+                    <a href="/san-pham/danh-muc/@category.Id"
+                       class="list-group-item list-group-item-action">
+
+                        @category.Name
+
+                    </a>
+                }
+
+            </div>
+
+        </div>
+
+        <div class="col-md-9">
+
+            <h4 class="mb-3">
+                Danh sách sản phẩm
+            </h4>
+
+            <div class="row">
+
+                @foreach (var product in products!)
+                {
+                    <div class="col-md-4 mb-4">
+
+                        <div class="card h-100">
+
+                            <img src="@product.Image"
+                                 class="card-img-top"
+                                 style="
+                            height:220px;
+                            object-fit:cover;
+                            "
+                                 alt="@product.Name">
+
+                            <div class="card-body">
+
+                                <h6 class="card-title">
+                                    @product.Name
+                                </h6>
+
+                                <div>
+
+                                    <del>
+                                        Giá:
+                                        @product.Price.ToString("N0") đ
+                                    </del>
+
+                                </div>
+
+                                <div class="text-danger">
+
+                                    Giá:
+                                    @product.SalePrice.ToString("N0") đ
+
+                                </div>
+
+                                <a href="/san-pham/@product.Id"
+                                   class="btn btn-success btn-sm w-100 mt-2">
+
+                                    Chi tiết
+
+                                </a>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+                }
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>

@@ -1,0 +1,86 @@
+@model DmaLession03.Models.Product
+
+@{
+    ViewData["Title"] = "Chi tiết sản phẩm";
+}
+
+<div class="container mt-4">
+
+    <h2>Chi tiết sản phẩm</h2>
+
+    <hr />
+
+    <div class="row">
+
+
+        <div class="col-md-4">
+
+            <img src="@Model.Image"
+                 class="img-fluid"
+                 style="
+            max-height:400px;
+            width:100%;
+            object-fit:cover;
+            "
+                 alt="@Model.Name">
+
+        </div>
+
+        <div class="col-md-8">
+
+            <h3>
+                Sản phẩm: @Model.Name
+            </h3>
+
+            <p>
+                <strong>Giá gốc:</strong>
+
+                <del>
+                    @Model.Price.ToString("N0") đ
+                </del>
+
+                <strong class="ms-2">
+                    Giá mới:
+                </strong>
+
+                @Model.SalePrice.ToString("N0") đ
+            </p>
+
+
+            <p>
+                <strong>Mô tả:</strong>
+            </p>
+
+            <p>
+                @Model.Description
+            </p>
+
+
+            <p>
+                <strong>Trạng thái:</strong>
+                @Model.Status
+            </p>
+
+
+            <p>
+                <strong>Ngày đăng:</strong>
+
+                @Model.CreatedAt.ToString("dd/MM/yyyy HH:mm:ss")
+            </p>
+
+
+            <hr />
+
+
+            <a href="/san-pham"
+               class="btn btn-danger">
+
+                Về danh sách
+
+            </a>
+
+        </div>
+
+    </div>
+
+</div>

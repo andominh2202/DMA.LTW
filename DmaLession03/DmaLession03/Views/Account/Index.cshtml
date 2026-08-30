@@ -1,0 +1,53 @@
+﻿@{
+    ViewData["Title"] = "Account";
+
+    var accounts =
+        ViewBag.Accounts as List<DmaLession03.Models.Account>;
+}
+
+<div class="container mt-4">
+
+    <h2 class="mb-4">Danh sách Account</h2>
+
+    <div class="row">
+
+        @foreach (var account in accounts!)
+        {
+            <div class="col-md-4 mb-4">
+
+                <div class="card h-100">
+
+                    <img src="@account.Avatar"
+                         class="card-img-top"
+                         style="height:250px; object-fit:cover;"
+                         alt="@account.Name">
+
+                    <div class="card-body">
+
+                        <h5 class="card-title">
+                            @account.Name
+                        </h5>
+
+                        <p class="card-text">
+                            Email: @account.Email
+                        </p>
+
+                        <p class="card-text">
+                            Phone: @account.Phone
+                        </p>
+
+                        <a href="/ho-so-cua-toi/@account.Id"
+                           class="btn btn-primary">
+                            Xem Profile
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+        }
+
+    </div>
+
+</div>

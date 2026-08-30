@@ -1,0 +1,76 @@
+﻿@{
+    ViewData["Title"] = "Profile";
+
+    var account =
+        ViewBag.Account as DmaLession03.Models.Account;
+}
+
+<div class="container mt-4">
+
+    <h2>Thông tin cá nhân</h2>
+
+    <hr />
+
+    <div class="row">
+
+        <div class="col-md-4">
+
+            <img src="@account!.Avatar"
+                 class="img-fluid"
+                 style="max-height:400px; object-fit:cover;"
+                 alt="@account.Name">
+
+        </div>
+
+        <div class="col-md-8">
+
+            <h3>@account.Name</h3>
+
+            <p>
+                <strong>Email:</strong>
+                @account.Email
+            </p>
+
+            <p>
+                <strong>Số điện thoại:</strong>
+                @account.Phone
+            </p>
+
+            <p>
+                <strong>Địa chỉ:</strong>
+                @account.Address
+            </p>
+
+            <p>
+                <strong>Giới tính:</strong>
+
+                @if (account.Gender == 1)
+                {
+                    <span>Nam</span>
+                }
+                else
+                {
+                    <span>Nữ</span>
+                }
+            </p>
+
+            <p>
+                <strong>Ngày sinh:</strong>
+                @account.Birthday.ToString("dd/MM/yyyy")
+            </p>
+
+            <p>
+                <strong>Giới thiệu:</strong>
+                @account.Bio
+            </p>
+
+            <a href="/account"
+               class="btn btn-danger">
+                Về danh sách
+            </a>
+
+        </div>
+
+    </div>
+
+</div>
