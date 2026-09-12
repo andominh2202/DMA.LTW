@@ -1,9 +1,9 @@
-﻿@model IEnumerable<DmaLession04.Models.Book>
+@model IEnumerable<DmaLession04.Models.Book>
 @{
     ViewData["Title"] = "Index";
 }
 <h2>Danh sách các cuốn sách</h2>
-<form action="" method="POST" class="form-inline" role="from">
+<form action="" method="POST" class="form-inline" role="form">
     <div class="form-group">
         <select name="AuthorId" class="form-control" asp-items="@ViewBag.authors">
             <option value="">Chọn tác giả</option>
@@ -26,6 +26,7 @@
             <th>Thể loại</th>
             <th>Giá</th>
             <th>Hình ảnh</th>
+            <th></th>
         </tr>
     </thead>
     <tbody>

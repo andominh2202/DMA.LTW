@@ -1,5 +1,42 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
+@model DmaLession04.Models.Book
 @{
+    ViewData["Title"] = "Edit Book";
 }
+
+<h2>Sửa thông tin sách</h2>
+<form action="" method="post" enctype="multipart/form-data">
+    <input type="hidden" asp-for="Id" />
+    <div class="form-group">
+        <label asp-for="Title">Tên sách</label>
+        <input type="text" class="form-control" asp-for="Title" placeholder="Tên sách">
+    </div>
+    <div class="form-group">
+        <label asp-for="AuthorId">Tác giả</label>
+        <select asp-for="AuthorId" class="form-control" asp-items="@ViewBag.authors">
+            <option value="">Chọn tác giả</option>
+        </select>
+    </div>
+    <div class="form-group">
+        <label asp-for="GenreId">Thể loại</label>
+        <select asp-for="GenreId" class="form-control" asp-items="@ViewBag.genres">
+            <option value="">Chọn thể loại</option>
+        </select> 
+    </div>
+    <div class="form-group">
+        <label asp-for="Price">Giá</label>
+        <input type="number" class="form-control" asp-for="Price" placeholder="Giá sách">
+    </div>
+    <div class="accept-policy">
+        <label asp-for="TotalPages">Tổng số trang</label>
+        <input type="text" class="form-control" asp-for="TotalPages" placeholder="Số trang">
+    </div>
+    <div class="form-group">
+        <label asp-for="Image">Hình ảnh</label>
+        <input type="text" class="form-control" asp-for="Image">
+    </div>
+    <div class="form-group">
+        <label asp-for="Summary">Tóm tắt</label>
+        <textarea class="form-control" asp-for="Summary" placeholder="Tóm tắt nội dung sách"></textarea>
+    </div>
+    <button type="submit" class="btn btn-primary">Lưu lại</button>
+</form>

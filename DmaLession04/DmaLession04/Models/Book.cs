@@ -1,17 +1,17 @@
-﻿using Microsoft.AspNetCore.Mvc.Rendering;
+using Microsoft.AspNetCore.Mvc.Rendering;
 
 namespace DmaLession04.Models
 {
     public class Book
     {
         public int Id { get; set; }
-        public string Title { get; set; }
+        public string Title { get; set; } = string.Empty;
         public int AuthorId { get; set; }
         public int GenreId { get; set; }
-        public string Image { get; set; }
+        public string? Image { get; set; }
         public float Price { get; set; }
-        public string TotalPages { get; set; }
-        public string Summary { get; set; }
+        public string? TotalPages { get; set; }
+        public string? Summary { get; set; }
 
         public List<Book> GetBooksList()
         {
@@ -21,30 +21,48 @@ namespace DmaLession04.Models
                 {
                     Id = 1,
                     Title = "Chí Phèo",
-                    AuthorId = -1,
-                    GenreId = 1,
-                    Image = "https://example.com/gatsby.jpg",
-                    Price = 00000,
-                    Summary = "",
+                    AuthorId = 1,
+                    GenreId = 2,
+                    Image = "https://example.com/chipheo.jpg",
+                    Price = 50000,
+                    Summary = "Tác phẩm Chí Phèo",
                     TotalPages = "250"
                 },
-                new Book(){ },
-                new Book(){ },
-                new Book(){ }
+                new Book()
+                {
+                    Id = 2,
+                    Title = "Tắt đèn",
+                    AuthorId = 2,
+                    GenreId = 2,
+                    Image = "https://example.com/tatden.jpg",
+                    Price = 60000,
+                    Summary = "Tác phẩm Tắt đèn",
+                    TotalPages = "300"
+                },
+                new Book()
+                {
+                    Id = 3,
+                    Title = "Lão Hạc",
+                    AuthorId = 1,
+                    GenreId = 2,
+                    Image = "https://example.com/laohac.jpg",
+                    Price = 45000,
+                    Summary = "Tác phẩm Lão Hạc",
+                    TotalPages = "150"
+                }
             };
             return books;
         }
 
-        public Book GetBookById(int id)
+        public Book? GetBookById(int id)
         {
-            Book book = this.GetBooksList().FirstOrDefault(b => b.Id == id);
+            Book? book = this.GetBooksList().FirstOrDefault(b => b.Id == id);
             return book;
         }
 
         public List<SelectListItem> Authors { get; } = new List<SelectListItem>{
             new SelectListItem {Value="1", Text="Nam Cao"},
             new SelectListItem {Value="2", Text="Ngô Tất Tố"},
-
         };
 
         public List<SelectListItem> Genres { get; } = new List<SelectListItem>

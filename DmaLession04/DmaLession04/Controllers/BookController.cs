@@ -1,4 +1,4 @@
-﻿using DmaLession04.Models;
+using DmaLession04.Models;
 using Microsoft.AspNetCore.Mvc;
 
 namespace DmaLession04.Controllers
@@ -6,6 +6,7 @@ namespace DmaLession04.Controllers
     public class BookController : Controller
     {
         protected Book book = new Book();
+
         public IActionResult Index()
         {
             ViewBag.authors = book.Authors;
@@ -26,8 +27,14 @@ namespace DmaLession04.Controllers
         {
             ViewBag.authors = book.Authors;
             ViewBag.genres = book.Genres;
-            Book model = book.GetBookById(id);
+            Book? model = book.GetBookById(id);
             return View(model);
+        }
+
+        public PartialViewResult PopularBook()
+        {
+            var books = book.GetBooksList();
+            return PartialView(books);
         }
     }
 }

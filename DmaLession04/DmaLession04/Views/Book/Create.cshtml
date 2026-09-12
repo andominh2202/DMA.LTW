@@ -1,4 +1,4 @@
-﻿@model DmaLession04.Models.Book
+@model DmaLession04.Models.Book
 @{
     ViewData["Title"] = "Create Book";
 }
@@ -11,7 +11,8 @@
     </div>
     <div class="form-group">
         <label asp-for="AuthorId">Tác giả</label>
-        <select asp-for="AuthorId" class="form-control" asp-item="@ViewBag.authors">
+        <select asp-for="AuthorId" class="form-control" asp-items="@ViewBag.authors">
+            <option value="">Chọn tác giả</option>
         </select>
     </div>
     <div class="form-group">
