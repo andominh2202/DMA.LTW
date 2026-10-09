@@ -1,0 +1,36 @@
+@model DmaLession08.Models.Category
+@{
+    ViewData["Title"] = "Chỉnh sửa thể loại";
+}
+
+<div class="row justify-content-center">
+    <div class="col-md-6">
+        <div class="card">
+            <div class="card-header bg-light">
+                <h4 class="mb-0">Chỉnh sửa thể loại</h4>
+            </div>
+            <div class="card-body">
+                <form asp-action="Edit" method="post">
+                    <div asp-validation-summary="ModelOnly" class="text-danger mb-3"></div>
+                    <input type="hidden" asp-for="CategoryId" />
+
+                    <div class="mb-3">
+                        <label class="form-label">Mã thể loại</label>
+                        <input value="@Model.CategoryId" class="form-control" readonly disabled />
+                    </div>
+
+                    <div class="mb-3">
+                        <label asp-for="CategoryName" class="form-label">Tên thể loại</label>
+                        <input asp-for="CategoryName" class="form-control" required />
+                        <span asp-validation-for="CategoryName" class="text-danger"></span>
+                    </div>
+
+                    <div class="d-flex gap-2">
+                        <button type="submit" class="btn btn-warning">Cập nhật</button>
+                        <a asp-action="Index" class="btn btn-secondary">Quay lại danh sách</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

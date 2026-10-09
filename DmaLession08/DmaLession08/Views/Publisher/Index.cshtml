@@ -1,0 +1,51 @@
+@model IEnumerable<DmaLession08.Models.Publisher>
+@{
+    ViewData["Title"] = "Quản lý Nhà xuất bản";
+}
+
+<div class="d-flex justify-content-between align-items-center mb-3">
+    <h2>Danh sách Nhà Xuất Bản</h2>
+    <a asp-action="Create" class="btn btn-primary">Thêm mới NXB</a>
+</div>
+
+<table class="table table-bordered table-striped table-hover align-middle">
+    <thead class="table-light">
+        <tr>
+            <th style="width: 100px;">Mã NXB</th>
+            <th>Tên nhà xuất bản</th>
+            <th>Điện thoại</th>
+            <th>Địa chỉ</th>
+            <th style="width: 160px;">Đầu sách</th>
+            <th class="text-center" style="width: 160px;">Thao tác</th>
+        </tr>
+    </thead>
+    <tbody>
+        @if (!Model.Any())
+        {
+            <tr>
+                <td colspan="6" class="text-center text-muted py-4">Chưa có dữ liệu nhà xuất bản</td>
+            </tr>
+        }
+        else
+        {
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@item.PublisherId</td>
+                    <td>@item.PublisherName</td>
+                    <td>@item.Phone</td>
+                    <td>@item.Address</td>
+                    <td>
+                        <a asp-controller="Book" asp-action="Index" asp-route-publisherId="@item.PublisherId">
+                            @item.Books.Count đầu sách
+                        </a>
+                    </td>
+                    <td class="text-center">
+                        <a asp-action="Edit" asp-route-id="@item.PublisherId" class="btn btn-sm btn-warning">Sửa</a>
+                        <a asp-action="Delete" asp-route-id="@item.PublisherId" class="btn btn-sm btn-danger">Xóa</a>
+                    </td>
+                </tr>
+            }
+        }
+    </tbody>
+</table>

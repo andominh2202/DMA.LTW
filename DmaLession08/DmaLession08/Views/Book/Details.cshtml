@@ -1,0 +1,51 @@
+@model DmaLession08.Models.Book
+@{
+    ViewData["Title"] = "Chi tiết sách: " + Model.Title;
+}
+
+<div class="row justify-content-center">
+    <div class="col-md-8">
+        <div class="card">
+            <div class="card-header bg-light">
+                <h4 class="mb-0">Chi tiết thông tin sách</h4>
+            </div>
+            <div class="card-body">
+                <dl class="row mb-0">
+                    <dt class="col-sm-3 text-muted">Mã sách:</dt>
+                    <dd class="col-sm-9"><strong>@Model.BookId</strong></dd>
+
+                    <dt class="col-sm-3 text-muted">Tên sách:</dt>
+                    <dd class="col-sm-9">@Model.Title</dd>
+
+                    <dt class="col-sm-3 text-muted">Tác giả:</dt>
+                    <dd class="col-sm-9">@Model.Author</dd>
+
+                    <dt class="col-sm-3 text-muted">Năm phát hành:</dt>
+                    <dd class="col-sm-9">@Model.Release</dd>
+
+                    <dt class="col-sm-3 text-muted">Giá bán:</dt>
+                    <dd class="col-sm-9 text-danger fw-bold">
+                        @(Model.Price.HasValue ? string.Format("{0:N0} đ", Model.Price.Value) : "")
+                    </dd>
+
+                    <dt class="col-sm-3 text-muted">Thể loại:</dt>
+                    <dd class="col-sm-9">@Model.Category?.CategoryName</dd>
+
+                    <dt class="col-sm-3 text-muted">Nhà xuất bản:</dt>
+                    <dd class="col-sm-9">@Model.Publisher?.PublisherName</dd>
+
+                    <dt class="col-sm-3 text-muted">Ảnh bìa:</dt>
+                    <dd class="col-sm-9">@Model.Picture</dd>
+
+                    <dt class="col-sm-3 text-muted">Mô tả:</dt>
+                    <dd class="col-sm-9">@Model.Description</dd>
+                </dl>
+            </div>
+            <div class="card-footer bg-white d-flex gap-2">
+                <a asp-action="Edit" asp-route-id="@Model.BookId" class="btn btn-warning">Sửa</a>
+                <a asp-action="Delete" asp-route-id="@Model.BookId" class="btn btn-danger">Xóa</a>
+                <a asp-action="Index" class="btn btn-secondary">Quay lại danh sách</a>
+            </div>
+        </div>
+    </div>
+</div>

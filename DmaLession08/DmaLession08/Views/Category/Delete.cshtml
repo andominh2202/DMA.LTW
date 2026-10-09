@@ -1,0 +1,33 @@
+@model DmaLession08.Models.Category
+@{
+    ViewData["Title"] = "Xóa thể loại";
+}
+
+<div class="row justify-content-center">
+    <div class="col-md-6">
+        <div class="card border-danger">
+            <div class="card-header bg-danger text-white">
+                <h4 class="mb-0">Xác nhận xóa thể loại?</h4>
+            </div>
+            <div class="card-body">
+                <dl class="row mb-0">
+                    <dt class="col-sm-4 text-muted">Mã thể loại:</dt>
+                    <dd class="col-sm-8"><strong>@Model.CategoryId</strong></dd>
+
+                    <dt class="col-sm-4 text-muted">Tên thể loại:</dt>
+                    <dd class="col-sm-8">@Model.CategoryName</dd>
+
+                    <dt class="col-sm-4 text-muted">Số sách hiện có:</dt>
+                    <dd class="col-sm-8">@Model.Books.Count cuốn</dd>
+                </dl>
+            </div>
+            <div class="card-footer bg-white d-flex gap-2">
+                <form asp-action="Delete" method="post" class="d-inline">
+                    <input type="hidden" asp-for="CategoryId" />
+                    <button type="submit" class="btn btn-danger">Xóa thể loại</button>
+                </form>
+                <a asp-action="Index" class="btn btn-secondary">Hủy</a>
+            </div>
+        </div>
+    </div>
+</div>

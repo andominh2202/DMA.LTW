@@ -1,0 +1,97 @@
+@model IEnumerable<DmaLession08.Models.Book>
+@{
+    ViewData["Title"] = "Quản lý Sách";
+    int currentPage = ViewBag.CurrentPage ?? 1;
+    int totalPages = ViewBag.TotalPages ?? 1;
+}
+
+<div class="d-flex justify-content-between align-items-center mb-3">
+    <h2>Danh sách Sách</h2>
+    <a asp-action="Create" class="btn btn-primary">Thêm mới sách</a>
+</div>
+
+<!-- Bộ lọc tìm kiếm -->
+<div class="card mb-3">
+    <div class="card-body">
+        <form method="get" asp-action="Index" class="row g-2">
+            <div class="col-md-4">
+                <input type="text" name="searchString" value="@ViewBag.SearchString" class="form-control" placeholder="Tìm theo tên sách, tác giả..." />
+            </div>
+            <div class="col-md-3">
+                <select name="categoryId" class="form-select" asp-items="ViewBag.Categories">
+                    <option value="">-- Tất cả thể loại --</option>
+                </select>
+            </div>
+            <div class="col-md-3">
+                <select name="publisherId" class="form-select" asp-items="ViewBag.Publishers">
+                    <option value="">-- Tất cả NXB --</option>
+                </select>
+            </div>
+            <div class="col-md-2 d-flex gap-1">
+                <button type="submit" class="btn btn-secondary w-100">Tìm kiếm</button>
+                <a asp-action="Index" class="btn btn-outline-secondary">Làm mới</a>
+            </div>
+        </form>
+    </div>
+</div>
+
+<table class="table table-bordered table-striped table-hover align-middle">
+    <thead class="table-light">
+        <tr>
+            <th>Mã sách</th>
+            <th>Tên sách</th>
+            <th>Tác giả</th>
+            <th>Năm XB</th>
+            <th>Giá bán</th>
+            <th>Thể loại</th>
+            <th>Nhà xuất bản</th>
+            <th class="text-center" style="width: 200px;">Thao tác</th>
+        </tr>
+    </thead>
+    <tbody>
+        @if (!Model.Any())
+        {
+            <tr>
+                <td colspan="8" class="text-center text-muted py-4">Không có dữ liệu sách phù hợp</td>
+            </tr>
+        }
+        else
+        {
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td><strong>@item.BookId</strong></td>
+                    <td>@item.Title</td>
+                    <td>@item.Author</td>
+                    <td>@item.Release</td>
+                    <td class="text-danger fw-bold">
+                        @(item.Price.HasValue ? string.Format("{0:N0} đ", item.Price.Value) : "")
+                    </td>
+                    <td>@(item.Category?.CategoryName)</td>
+                    <td>@(item.Publisher?.PublisherName)</td>
+                    <td class="text-center">
+                        <a asp-action="Details" asp-route-id="@item.BookId" class="btn btn-sm btn-info text-white">Chi tiết</a>
+                        <a asp-action="Edit" asp-route-id="@item.BookId" class="btn btn-sm btn-warning">Sửa</a>
+                        <a asp-action="Delete" asp-route-id="@item.BookId" class="btn btn-sm btn-danger">Xóa</a>
+                    </td>
+                </tr>
+            }
+        }
+    </tbody>
+</table>
+
+@if (totalPages > 1)
+{
+    <nav>
+        <ul class="pagination justify-content-center">
+            @for (int i = 1; i <= totalPages; i++)
+            {
+                <li class="page-item @(currentPage == i ? "active" : "")">
+                    <a class="page-link" asp-action="Index" asp-route-page="@i" asp-route-searchString="@ViewBag.SearchString" asp-route-categoryId="@ViewBag.SelectedCategoryId" asp-route-publisherId="@ViewBag.SelectedPublisherId">
+                        @i
+                    </a>
+                </li>
+            }
+        </ul>
+    </nav>
+}

@@ -1,0 +1,42 @@
+@model DmaLession08.Models.Book
+@{
+    ViewData["Title"] = "Xóa sách";
+}
+
+<div class="row justify-content-center">
+    <div class="col-md-6">
+        <div class="card border-danger">
+            <div class="card-header bg-danger text-white">
+                <h4 class="mb-0">Xác nhận xóa cuốn sách?</h4>
+            </div>
+            <div class="card-body">
+                <p class="text-danger">Bạn có chắc chắn muốn xóa cuốn sách này khỏi hệ thống không?</p>
+                <dl class="row mb-0">
+                    <dt class="col-sm-4 text-muted">Mã sách:</dt>
+                    <dd class="col-sm-8"><strong>@Model.BookId</strong></dd>
+
+                    <dt class="col-sm-4 text-muted">Tên sách:</dt>
+                    <dd class="col-sm-8">@Model.Title</dd>
+
+                    <dt class="col-sm-4 text-muted">Tác giả:</dt>
+                    <dd class="col-sm-8">@Model.Author</dd>
+
+                    <dt class="col-sm-4 text-muted">Thể loại:</dt>
+                    <dd class="col-sm-8">@Model.Category?.CategoryName</dd>
+
+                    <dt class="col-sm-4 text-muted">Giá bán:</dt>
+                    <dd class="col-sm-8 text-danger fw-bold">
+                        @(Model.Price.HasValue ? string.Format("{0:N0} đ", Model.Price.Value) : "")
+                    </dd>
+                </dl>
+            </div>
+            <div class="card-footer bg-white d-flex gap-2">
+                <form asp-action="Delete" method="post" class="d-inline">
+                    <input type="hidden" asp-for="BookId" />
+                    <button type="submit" class="btn btn-danger">Xác nhận xóa</button>
+                </form>
+                <a asp-action="Index" class="btn btn-secondary">Hủy</a>
+            </div>
+        </div>
+    </div>
+</div>

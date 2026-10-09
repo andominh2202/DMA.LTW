@@ -1,0 +1,47 @@
+@model IEnumerable<DmaLession08.Models.Category>
+@{
+    ViewData["Title"] = "Quản lý Thể loại";
+}
+
+<div class="d-flex justify-content-between align-items-center mb-3">
+    <h2>Danh mục Thể loại</h2>
+    <a asp-action="Create" class="btn btn-primary">Thêm mới thể loại</a>
+</div>
+
+<table class="table table-bordered table-striped table-hover align-middle">
+    <thead class="table-light">
+        <tr>
+            <th style="width: 120px;">Mã loại</th>
+            <th>Tên thể loại</th>
+            <th style="width: 180px;">Số lượng sách</th>
+            <th class="text-center" style="width: 160px;">Thao tác</th>
+        </tr>
+    </thead>
+    <tbody>
+        @if (!Model.Any())
+        {
+            <tr>
+                <td colspan="4" class="text-center text-muted py-4">Chưa có dữ liệu thể loại</td>
+            </tr>
+        }
+        else
+        {
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@item.CategoryId</td>
+                    <td>@item.CategoryName</td>
+                    <td>
+                        <a asp-controller="Book" asp-action="Index" asp-route-categoryId="@item.CategoryId">
+                            @item.Books.Count cuốn sách
+                        </a>
+                    </td>
+                    <td class="text-center">
+                        <a asp-action="Edit" asp-route-id="@item.CategoryId" class="btn btn-sm btn-warning">Sửa</a>
+                        <a asp-action="Delete" asp-route-id="@item.CategoryId" class="btn btn-sm btn-danger">Xóa</a>
+                    </td>
+                </tr>
+            }
+        }
+    </tbody>
+</table>
