@@ -1,0 +1,42 @@
+﻿<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - Quản trị hệ thống</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <style>
+            body { min-height: 100vh; display: flex; flex-direction: column; }
+            .sidebar { width: 240px; background-color: #343a40; min-height: calc(100vh - 56px); }
+            .sidebar a { color: #cfd8dc; text-decoration: none; padding: 12px 16px; display: block; }
+            .sidebar a:hover { background-color: #495057; color: #fff; }
+            .admin-content { flex-grow: 1; padding: 20px; background-color: #f8f9fa; }
+    </style>
+    @RenderSection("Css", required: false)
+</head>
+<body>
+    <header class="navbar navbar-dark bg-dark px-3 shadow">
+        <a class="navbar-brand" href="#">BẢNG ĐIỀU KHIỂN ADMIN</a>
+        <a class="btn btn-sm btn-outline-light" href="/">Về trang chủ</a>
+    </header>
+
+    <div class="d-flex">
+        <!-- Sidebar Menu quản trị -->
+        <nav class="sidebar">
+            <a asp-area="Admins" asp-controller="Home" asp-action="Index">📊 Bảng điều khiển</a>
+            <a href="#">📦 Quản lý Sản phẩm</a>
+            <a href="#">📁 Quản lý Danh mục</a>
+            <a href="#">👥 Quản lý Người dùng</a>
+        </nav>
+
+        <!-- Vùng hiển thị nội dung trang con của Admin -->
+        <main class="admin-content">
+            @RenderBody()
+        </main>
+    </div>
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    @RenderSection("Scripts", required: false)
+</body>
+</html>

@@ -20,10 +20,17 @@ app.UseAuthorization();
 
 app.MapStaticAssets();
 
+// 1. Route dành riêng cho các Area (Admins)
+app.MapControllerRoute(
+    name: "areas",
+    pattern: "{area:exists}/{controller=Home}/{action=Index}/{id?}");
+
+// 2. Route mặc định cho người dùng thông thường
 app.MapControllerRoute(
     name: "default",
     pattern: "{controller=Products}/{action=Index}/{id?}")
     .WithStaticAssets();
+
 
 
 app.Run();
