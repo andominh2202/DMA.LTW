@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    <link href="/css/LayoutHome.css" rel="stylesheet"/>
+</head>
+<body>
+    <div id="wrapper">
+        <div id="navbar">
+            <ul>
+                <li><a href="/Products/Index">Home</a></li>
+                <li><a href="/Products/Search">Search</a></li>
+                <li><a href="/Products/Hots">Hots</a></li>
+                <li><a href="/Products/About">About</a></li>
+            </ul>
+        </div>
+        <div class="content">
+            @RenderBody()
+        </div>
+        <div class="footer">
+            <p>Copyright &copy; @DateTime.Now.Year - My ASP.NET Application</p>
+        </div>
+    </div>
+</body>
+</html>

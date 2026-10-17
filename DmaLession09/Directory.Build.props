@@ -1,0 +1,6 @@
+<Project>
+  <PropertyGroup>
+    <UseArtifactsOutput>true</UseArtifactsOutput>
+    <ArtifactsPath>C:\Users\AnNe\.build\DmaLession09</ArtifactsPath>
+  </PropertyGroup>
+</Project>
