@@ -1,0 +1,56 @@
+@model IEnumerable<Learner>
+@{
+    int pageNum = ViewBag.pageNum ?? 0;
+    int currentPage = ViewBag.pageIndex ?? 1;
+    bool useAjax = ViewBag.UseAjax ?? true;
+}
+<div class="table-responsive" id="learner-results" data-mid="@ViewBag.mid" data-keyword="@ViewBag.keyword" data-page="@currentPage">
+    <table class="table table-striped mt-3">
+        <thead>
+            <tr>
+                <th>Mã</th>
+                <th>Tên</th>
+                <th>Họ</th>
+                <th>Ngành</th>
+                <th>Ngày Nhập Học</th>
+                <th>Chức năng</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var learner in Model)
+            {
+                <tr>
+                    <td>@learner.LearnerID</td>
+                    <td>@learner.FirstMidName</td>
+                    <td>@learner.LastName</td>
+                    <td>@learner.Major?.MajorName</td>
+                    <td>@learner.EnrollmentDate.ToString("g")</td>
+                    <td>
+                        <a asp-controller="Learner" asp-action="Edit" asp-route-id="@learner.LearnerID">Sửa</a> |
+                        <a asp-controller="Learner" asp-action="Delete" asp-route-id="@learner.LearnerID">Xóa</a>
+                    </td>
+                </tr>
+            }
+            @if (!Model.Any())
+            {
+                <tr><td colspan="6" class="text-center">Không tìm thấy người học phù hợp.</td></tr>
+            }
+        </tbody>
+    </table>
+</div>
+@if (pageNum > 0)
+{
+    <nav aria-label="Phân trang người học">
+        <ul class="pagination">
+            @for (int i = 1; i <= pageNum; i++)
+            {
+                <li class="page-item @(i == currentPage ? "active" : "")">
+                    <a class="page-link" asp-controller="Learner" asp-action="Index"
+                       asp-route-mid="@ViewBag.mid" asp-route-keyword="@ViewBag.keyword"
+                       asp-route-pageIndex="@i" asp-route-ajax="@useAjax"
+                       aria-current="@(i == currentPage ? "page" : null)">@i</a>
+                </li>
+            }
+        </ul>
+    </nav>
+}

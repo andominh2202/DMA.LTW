@@ -1,0 +1,10 @@
+using Dma_Lab5_Lab6.DBFirst.Models;
+using Microsoft.EntityFrameworkCore;
+var builder = WebApplication.CreateBuilder(args);
+builder.Services.AddDbContext<SchoolContext>(options => options.UseSqlServer(builder.Configuration.GetConnectionString("SchoolContext")));
+builder.Services.AddControllersWithViews(options => options.ModelBindingMessageProvider.SetAttemptedValueIsInvalidAccessor((value, field) => $"Giá trị không hợp lệ cho {field}."));
+var app = builder.Build();
+app.UseStaticFiles();
+app.UseRouting();
+app.MapControllerRoute("default", "{controller=Learners}/{action=Index}/{id?}");
+app.Run();
