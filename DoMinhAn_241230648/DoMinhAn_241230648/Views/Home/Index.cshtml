@@ -8,19 +8,21 @@
 
 @section Scripts{
     <script>
-        // @ts-nocheck
-
         document.addEventListener("click", async function (e) {
+            if (!(e.target instanceof Element)) return;
             const link = e.target.closest(".category-link");
-            if (!link) return
+            if (!link) return;
             e.preventDefault();
 
             const id = link.getAttribute("data-id");
             const name = link.getAttribute("data-name");
+            const bookList = document.getElementById("book-list");
+            const bookTitle = document.getElementById("book-title");
+            if (!id || !bookList || !bookTitle) return;
 
             try {
                 const url = '@Url.Action("LocSach", "Home")'
-                    + "?id = " + encodeURIComponent(id);
+                    + "?id=" + encodeURIComponent(id);
                 const response = await fetch(url);
 
                 if (!response.ok) {
@@ -28,11 +30,12 @@
                 }
                 const html = await response.text();
 
-                document.getElementById("book-list").innerHTML = html;
-                document.getElementById("book-title").textContent = name;
+                bookList.innerHTML = html;
+                bookTitle.textContent = name;
             }
             catch (error) {
-                alert("Lỗi đọc sách" + error.message);
+                const message = error instanceof Error ? error.message : String(error);
+                alert("Lỗi đọc sách: " + message);
                 console.error(error);
             }
         });

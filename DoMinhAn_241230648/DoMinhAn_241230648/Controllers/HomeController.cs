@@ -21,7 +21,7 @@ namespace DoMinhAn_241230648.Controllers
             return View(dsSach);
         }
 
-        [HttpPost]
+        [HttpGet]
         public IActionResult LocSach (int id)
         {
             var dsSach = _db.Saches
