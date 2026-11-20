@@ -1,0 +1,16 @@
+﻿@model IEnumerable<DoMinhAn_241230648.Models.Sach>
+
+<main class="main">
+    <div class="container">
+        <div class="banner"><img src="~/images/banner.jpg" alt="Banner" /></div>
+
+        <div class="section-head">
+            <h3 id="book-title">Đỗ Minh An</h3>
+            <a href="#">Xem tất cả&rsaquo;</a>
+        </div>
+
+        <div id="book-list">
+            @await Html.PartialAsync("_DanhSachSach", Model)
+        </div>
+    </div>
+</main>

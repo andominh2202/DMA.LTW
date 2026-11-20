@@ -1,0 +1,40 @@
+﻿@model IEnumerable<DoMinhAn_241230648.Models.Sach>
+
+@{
+    Layout = "~/Views/Shared/DoMinhAn_Layout.cshtml";
+}
+
+@await Html.PartialAsync("DoMinhAn_MainContent", Model)
+
+@section Scripts{
+    <script>
+        // @ts-nocheck
+
+        document.addEventListener("click", async function (e) {
+            const link = e.target.closest(".category-link");
+            if (!link) return
+            e.preventDefault();
+
+            const id = link.getAttribute("data-id");
+            const name = link.getAttribute("data-name");
+
+            try {
+                const url = '@Url.Action("LocSach", "Home")'
+                    + "?id = " + encodeURIComponent(id);
+                const response = await fetch(url);
+
+                if (!response.ok) {
+                    throw new Error("HTTP" + response.status);
+                }
+                const html = await response.text();
+
+                document.getElementById("book-list").innerHTML = html;
+                document.getElementById("book-title").textContent = name;
+            }
+            catch (error) {
+                alert("Lỗi đọc sách" + error.message);
+                console.error(error);
+            }
+        });
+    </script>
+}
