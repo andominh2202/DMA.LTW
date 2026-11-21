@@ -1,0 +1,45 @@
+﻿@model IEnumerable<DoMinhAn_241230648_de2023.Models.HangHoa>
+@{
+    Layout = "~/Views/Shared/DoMinhAn_Layout.cshtml";
+}
+
+<div class="main">
+    <div class="content">
+        <div class="content-top">
+            <div class="heading">
+                <h3>Đỗ Minh An</h3>
+            </div>
+
+            <div class="clear"></div>
+        </div>
+        
+        <div id="danh-sach-hang">
+            @await Html.PartialAsync("_DanhSachHang", Model)
+        </div>
+    </div>
+</div>
+
+@await Html.PartialAsync("DoMinhAn_Content")
+
+@section Scripts {
+    <script>
+        $(document).on("click", ".chon-loai", function(e){
+            e.preventDefault();
+
+            var maLoai = $(this).data("id")
+
+            $.ajax({
+                url: '@Url.Action("LocHang", "Home")',
+                type: "GET",
+                data: {maLoai: maloai},
+
+                success: function(result){
+                    $("#danh-sach-hang").html(result);
+                },
+                error: function (){
+                    alert("Không thể tải danh sách hàng hóa");
+                }
+            });
+        });
+    </script>
+}

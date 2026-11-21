@@ -1,0 +1,21 @@
+﻿<!DOCTYPE HTML>
+
+<html>
+<head>
+    <title>Quản lý hàng hóa</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link href="~/css/style.css" rel="stylesheet" type="text/css" media="all" />
+</head>
+<body>
+    <div class="wrap">
+            @await Html.PartialAsync("DoMinhan_Header")
+
+            @RenderBody()
+    </div>
+
+    @await Html.PartialAsync("DoMinhAn_Footer")
+    <script src="~/js/jquery-1.7.2.min.js"></script>
+    @await RenderSectionAsync("Scripts", required:false)
+</body>
+</html>
